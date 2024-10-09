@@ -1,0 +1,48 @@
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tab.blue.active {
+    border-color: #007BFF;
+    color: #007BFF;
+}
+.tab.red.active {
+    border-color: red;
+    color: red;
+}
+.tab.green.active {
+    border-color: green;
+    color: green;
+}
+
+.tab.blue:hover{
+    color: white;
+    background-color:blue;
+}
+.tab.red:hover{
+    color: white;
+    background-color: red;
+}
+.tab.green:hover{
+    color: black;
+    background-color: green;
+}
