@@ -8,6 +8,7 @@ interface PropsTabs{
 }
 
 const Tabs : React.FC<PropsTabs> = ({pageCurrent, titles, links, overView}) => {
+    if (titles.length != links.length) return null
     const listTitlesLinks = []
     for (let i=0;i<titles.length;i++){
         listTitlesLinks.push(
@@ -24,7 +25,6 @@ const Tabs : React.FC<PropsTabs> = ({pageCurrent, titles, links, overView}) => {
             </div>
         </div>
     )
-
 }
 
 export default Tabs
