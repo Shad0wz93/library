@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path='/' element={<CheckBox titleBox="test" listChek={["test","test1"]} bkColor='red'/>} />
+      <Route path='/' element={<CheckBox titleBox="test" listChek={["test","test1","test2"]} bkColor='red'/>} />
         
       </Routes>
     </BrowserRouter>

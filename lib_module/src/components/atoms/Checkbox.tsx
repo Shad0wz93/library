@@ -10,7 +10,7 @@ const CheckBox:React.FC<PropsChekBox> = ({titleBox,listChek,bkColor}) => {
     let html = []
     for (let i=0;i<listChek.length;i++){
         html.push(
-            <div>
+            <div className='label-check'>
                 <input type="checkbox" id={listChek[i]} name={listChek[i]}/>
                 <label htmlFor={listChek[i]}>{listChek[i]}</label>
             </div>
@@ -18,10 +18,11 @@ const CheckBox:React.FC<PropsChekBox> = ({titleBox,listChek,bkColor}) => {
     }
 
     return (
-        <div className="custom-checkbox">
+        <div className={`custom-checkbox ${bkColor}`}>
             <h1>{titleBox}</h1>
-            <br/>
-            {html}
+            <div className='container-label-check'>
+                {html}
+            </div>
         </div>
     )
 }

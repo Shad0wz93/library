@@ -1,38 +1,37 @@
 .custom-checkbox {
     display: flex;
     align-items: center;
-    cursor: pointer;
-    background: white;
     border-radius: 3px;
+    flex-direction: column;
+    padding: 10px;
   }
   
-  .custom-checkbox input[type="checkbox"] {
+  .label-check input[type="checkbox"] {
     position: absolute;
     opacity: 0;
   }
   
-  .custom-checkbox label {
+  .label-check label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
     font-size: 16px;
-    color: #333;
   }
   
-  .custom-checkbox label::before {
+  .label-check label::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid #007bff;
+    border: 2px solid green;
     border-radius: 4px;
     background-color: #fff;
     transition: background-color 0.2s, border-color 0.2s;
   }
   
-  .custom-checkbox label::after {
+  .label-check label::after {
     content: '';
     position: absolute;
     left: 6px;
@@ -46,19 +45,82 @@
     transition: opacity 0.2s;
   }
   
-  .custom-checkbox input[type="checkbox"]:checked + label::before {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-  
-  .custom-checkbox input[type="checkbox"]:checked + label::after {
+  .label-check input[type="checkbox"]:checked + label::after {
     opacity: 1;
   }
   
-  .custom-checkbox label:hover::before {
-    border-color: #0056b3;
-  }
-  
-  .custom-checkbox input[type="checkbox"]:focus + label::before {
+  .label-check input[type="checkbox"]:focus + label::before {
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+
+  .container-label-check{
+    display: flex;
+    padding: 10px;
+  }
+  .label-check{
+    margin: 5px 5px;
+  }
+  .custom-checkbox label::before {
+    border-color: black; 
+  }
+  /************************************
+                  red
+  ************************************/
+  .custom-checkbox.red {
+    background: red;
+  }
+  .custom-checkbox.red h1 {
+    color: white;
+  }
+  .custom-checkbox.red label {
+    color: white;
+  }
+  .custom-checkbox.red label:hover {
+    color: rgb(251, 255, 0);
+  }
+  /*Checked*/
+  .custom-checkbox.red input[type="checkbox"]:checked + label::before {
+    background-color: orange;
+    border-color: rgb(125, 81, 1);
+  }
+  /************************************
+                  blue
+  ************************************/
+  .custom-checkbox.blue {
+    background: blue;
+  }
+  .custom-checkbox.blue h1 {
+    color: white;
+  }
+  .custom-checkbox.blue label {
+    color: white;
+  }
+  .custom-checkbox.green label:hover {
+    color: rgb(0, 157, 255);
+  }
+  /*Checked*/
+  .custom-checkbox.blue input[type="checkbox"]:checked + label::before {
+    background-color: cyan;
+    border-color: rgb(6, 126, 126)
+  ;
+  }
+  /************************************
+                  green
+  ************************************/
+  .custom-checkbox.green {
+    background: green;
+  }
+  .custom-checkbox.green h1 {
+    color: black;
+  }
+  .custom-checkbox.green label {
+    color: black;
+  }
+  .custom-checkbox.green label:hover {
+    color: rgb(0, 255, 0);
+  }
+  /*Checked*/
+  .custom-checkbox.green input[type="checkbox"]:checked + label::before {
+    background-color: cyan;
+    border-color: rgb(0, 122, 122);
   }
