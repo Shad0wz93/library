@@ -1,10 +1,14 @@
 import { useState } from "react"
+import '../../../assets/css/styleModal.css'
 
 interface PropsModal{
-    inContent:string
+    title: string
+    content: string
+    bkColor: string
+    position: string
 }
 
-const Modal: React.FC<PropsModal> = ({inContent}) => {
+const Modal: React.FC<PropsModal> = ({title,content,bkColor,position="centered"}) => {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -17,10 +21,11 @@ const Modal: React.FC<PropsModal> = ({inContent}) => {
 
     if(showModal){
         return (
-        <div className="modal-overlay">
-            <div className="modal-content">
-                <p>{inContent}</p>
-                <button onClick={closeModal}>Fermer</button>
+        <div className={`modal-overlay ${position}`}>
+            <div className={`bk ${bkColor}`}>
+                <h1>{title}</h1>
+                <p>{content}</p>
+                <button onClick={closeModal} className={`bt-modal-close ${bkColor}`}>Fermer</button>
             </div>
         </div>
         );

@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
       {/*<Route path='/counter' element={<MyComponen/>} /> */}
-      <Route path='/' element={<Modal inContent="test"/>} />
+      <Route path='/' element={<Modal title='Mon titre' content="test" bkColor='red' position='left'/>} />
         
 
       </Routes>
