@@ -1,23 +1,47 @@
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-    
-  }
+}
 
 ul.breadcrumb li {
     display: inline;
     font-size: 18px;
 }
+
 ul.breadcrumb li+li:before {
     padding: 8px;
     content: "/\00a0";
 }
+
 ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
 }
+
 ul.breadcrumb li a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    ul.breadcrumb {
+        padding: 8px 12px;
+    }
+
+    ul.breadcrumb li {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    ul.breadcrumb {
+        padding: 5px 10px;
+        text-align: center;
+    }
+
+    ul.breadcrumb li {
+        display: block;
+        font-size: 14px;
+    }
 }
 
 /* ************************************
@@ -27,7 +51,7 @@ ul.breadcrumb.red li a:hover {
     color: yellow;
 }
 
-ul.breadcrumb.red{
+ul.breadcrumb.red {
     background-color: red;
 }
 
@@ -38,6 +62,7 @@ ul.breadcrumb.red li a {
 ul.breadcrumb.red li+li:before {
     color: white;
 }
+
 /* ************************************
                 Green
 **************************************/
@@ -45,7 +70,7 @@ ul.breadcrumb.green li a:hover {
     color: yellow;
 }
 
-ul.breadcrumb.green{
+ul.breadcrumb.green {
     background-color: green;
 }
 
@@ -64,7 +89,7 @@ ul.breadcrumb.blue li a:hover {
     color: green;
 }
 
-ul.breadcrumb.blue{
+ul.breadcrumb.blue {
     background-color: blue;
 }
 
