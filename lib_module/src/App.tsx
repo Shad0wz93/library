@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path='/' element={<Tabs pageCurrent='Ici' titles={["page1","page2"]}  links={["#","#"]} overView="red"/>} /> 
+      <Route path='/' element={<Tabs titles={["titre1","titre2"]}  listContent={["Test1","test2"]} color="blue"/>} /> 
       </Routes>
     </BrowserRouter>
   )
