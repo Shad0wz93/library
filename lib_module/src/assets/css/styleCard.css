@@ -1,0 +1,77 @@
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #333;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+/*********************************
+                Red
+*********************************/
+.card.red {
+    background-color: red;
+  }
+
+.card-title.red {
+    color: white;
+}
+
+.card-description.red {
+    color: white;
+}
+
+/*********************************
+                Blue
+*********************************/
+.card.blue {
+    background-color: blue;
+  }
+
+.card-title.blue {
+    color: white;
+}
+
+.card-description.blue {
+    color: white;
+}
+
+/*********************************
+                Green
+*********************************/
+.card.green {
+    background-color: green;
+  }
+
+.card-title.green {
+    color: black;
+}
+
+.card-description.green {
+    color: black;
+}
