@@ -22,9 +22,9 @@ import CarouselPage from "./pages/components/organismes/carousel/carouselPage";
 import ModalPage from "./pages/components/organismes/modal/modalPage";
 import TabsPage from "./pages/components/organismes/tabs/tabsPage";
 import TableauPage from "./pages/components/organismes/tableau/tableauPage";
+import React from "react";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
