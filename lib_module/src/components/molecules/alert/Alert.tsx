@@ -58,7 +58,7 @@ const Alert: React.FC<AlertProps> = ({
   if (showAlert){
     return (
     <div className={`alert ${getAlertClass()}`}>
-      {/* Id de test data-testid : */}
+      {/* Id de test data-testid, cf Alert_data.tsx : */}
       <span data-testid="message">{message}</span>
       <button className="alert-close-btn" onClick={closeAlert}>
         &times; {/* Symbole pour fermer */}
