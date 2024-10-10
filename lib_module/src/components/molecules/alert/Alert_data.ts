@@ -11,4 +11,4 @@ export const message: string = "Message d'alerte !";
 export const autoClose: boolean = true;
 
 // Durée avant autoClose :
-export const autoCloseTime: number = 5000 ;
+export const autoCloseTime: number = 1000 ;

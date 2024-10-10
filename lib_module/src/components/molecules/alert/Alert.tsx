@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import '../../../assets/Alert.css'; 
+import { useState } from 'react';
 
 // Types d'alertes
 type AlertType = 'success' | 'error' | 'warning' | 'info';
@@ -12,7 +13,6 @@ interface AlertProps {
   message: string;
   autoClose?: boolean;
   autoCloseTime?: number; // en millisecondes
-  onClose: () => void;
 }
 
 // Composant Alert
@@ -20,16 +20,24 @@ const Alert: React.FC<AlertProps> = ({
   type,
   message,
   autoClose,
-  autoCloseTime = 5000, // Par défaut 5 secondes
-  onClose,
+  autoCloseTime = 5000 // Par défaut 5 secondes
 }) => {
   // Gestion de la fermeture automatique
   useEffect(() => {
     if (autoClose) {
-      const timer = setTimeout(onClose, autoCloseTime);
+      const timer = setTimeout(closeAlert, autoCloseTime);
       return () => clearTimeout(timer); // Nettoyer le timer lors du démontage
     }
-  }, [autoClose, autoCloseTime, onClose]);
+  }, [autoClose, autoCloseTime]);
+
+  const [showAlert, setShowAlert] = useState(true);
+
+  const openAlert = () => {
+    setShowAlert(true);
+  };
+  const closeAlert = () => {
+    setShowAlert(false); 
+  };
 
   // Fonction pour obtenir les classes CSS en fonction du type d'alerte
   const getAlertClass = () => {
@@ -47,14 +55,15 @@ const Alert: React.FC<AlertProps> = ({
     }
   };
 
-  return (
+  if (showAlert){
+    return (
     <div className={`alert ${getAlertClass()}`}>
-      <span>{message}</span>
-      <button className="alert-close-btn" onClick={onClose}>
+      <span data-testid="message">{message}</span>
+      <button className="alert-close-btn" onClick={closeAlert}>
         &times; {/* Symbole pour fermer */}
       </button>
     </div>
   );
 };
-
+}
 export default Alert;
