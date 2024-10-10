@@ -1,26 +1,40 @@
 import React from "react"
 import './styleToggle.css'
 
-type ToggleType = 'carre' | 'rond'
+/**
+ * Type Enuméré pour le Toggle
+ */
+
+/** Forme physique du Toggle */
+type ToggleForm = 'carre' | 'rond'
+
+/** Couleur du Toggle lorsqu'il est enclanché */
 type Color = 'red' | 'blue' | 'green'
 
+
+/**
+ * Interface représantent le Toggle
+ */
 interface PropsToggle{
-    type : ToggleType
+    /** Forme physique du Toggle */
+    form : ToggleForm
+
+    /** Couleur du Toggle lorsqu'il est enclanché */
     color : Color
 }
 
-const Toggle: React.FC<PropsToggle> = ({type,color}) => {
+/**
+ * Modèle Toggle personnalisable
+ * @param form -  Forme physique du Toggle (carre ou rond)
+ * @param color - Couleur du Toggle lorsqu'il est enclanché (red, blue ou green)
+ * @returns Composant JSX du Toggle
+ */
+const Toggle: React.FC<PropsToggle> = ({form,color}) => {
     return (
         <div>
             <label className="switch">
-                <input type="checkbox"/>
-                <span className={`slider ${color}`}></span>
-            </label>
-
-
-            <label className="switch">
-                <input type="checkbox"/>
-                <span className="slider round"></span>
+                <input className={`input ${color}`} type="checkbox"/>
+                <span className={`slider ${color} ${form}`}></span>
             </label>
         </div>
     )

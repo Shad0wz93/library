@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-      <Route path='/' element={<Toggle type='carre' color='red'/>} />
+      <Route path='/' element={<Toggle form='carre' color='green'/>} />
         
 
       </Routes>

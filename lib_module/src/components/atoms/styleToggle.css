@@ -41,21 +41,34 @@
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
-  .slider.round {
+  .slider.rond {
     border-radius: 34px;
   }
   
-  .slider.round:before {
+  .slider.rond:before {
     border-radius: 50%;
   }
 
   /****************************
                 Red
   *****************************/
-  input.red:focus + .slider {
-    box-shadow: 0 0 1px red;
-  }
+
   input.red:checked + .slider {
-    background-color: #2196F3;
+    background-color: red;
+  }
+
+  /****************************
+                Bleu
+  *****************************/
+
+  input.blue:checked + .slider {
+    background-color: blue;
+  }
+
+  /****************************
+                Green
+  *****************************/
+
+  input.green:checked + .slider {
+    background-color: green;
   }
