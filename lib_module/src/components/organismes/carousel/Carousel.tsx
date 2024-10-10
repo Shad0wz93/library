@@ -34,7 +34,8 @@ const Carousel: React.FC<CarouselProps> = ({ images, interval = 3000, showContro
 
   return (
     <div className="carousel-container">
-      <div 
+    {/* Id pour les tests Jest : */}
+      <div data-testid="carousel"
         className="carousel-slide" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
