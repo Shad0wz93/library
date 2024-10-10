@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import Alert from './Alert';
 import {type, message, autoClose, autoCloseTime} from './Alert_data';
 
+// Recherche d'un message d'alerte particulier :
 test('Alert contains specific item', () => {
   render(<Alert type={type} message={message} autoClose={autoClose} autoCloseTime={autoCloseTime} />);
 
