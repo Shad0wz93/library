@@ -1,13 +1,31 @@
 import { useState } from "react"
 import '../../../assets/css/styleModal.css'
 
+/**
+ * Interface représant le Modal
+ */
 interface PropsModal{
+    /** Titre h1 afficher dans l'encadré */
     title: string
+
+    /** Contenu présant dans l'encadré */
     content: string
+
+    /** Couleur de fond de l'encadré */
     bkColor: string
+
+    /** Position de l'encadré par rapport à la page */
     position: string
 }
 
+/**
+ * Composant Modal. Lorsque le bouton est cliqué, un encadré est affiché avec un contenu qui lui est donné
+ * @param title - Texte qui sera affiché en tant que titre dans l'encadré
+ * @param content - Contenu qui sera dans l'encadré
+ * @param bkColor - Couleur de fond de l'encadré
+ * @param position - Position où sera afficher l'encadré
+ * @returns Composant JSX Modal
+ */
 const Modal: React.FC<PropsModal> = ({title,content,bkColor,position="centered"}) => {
 
     const [showModal, setShowModal] = useState(false);
