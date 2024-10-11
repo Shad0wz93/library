@@ -1,6 +1,8 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Tabs from './Tabs';
+import '../../assets/css/styleTabs.css'
+import React from 'react';
 
 const mockTitles = ['Title 1', 'Title 2', 'Title 3'];
 const mockContent = ['Content 1', 'Content 2', 'Content 3'];

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import '../../assets/css/styleTabs.css'
+import React from 'react'
 
 /**
  * Interface représentant la Tabs
