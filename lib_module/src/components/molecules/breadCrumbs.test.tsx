@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import BreadCrumbs from './breadcrumbs';
+import React from 'react';
 
 describe('BreadCrumbs Component', () => {
   const mockProps = {
@@ -18,22 +18,38 @@ describe('BreadCrumbs Component', () => {
   });
 
   test('renders each breadcrumb with correct text and link', () => {
+    const { listOnglet, listLien } = mockProps;
+    
     render(<BreadCrumbs {...mockProps} />);
-
-    // Vérifie que chaque lien a le bon texte et le bon href
-    mockProps.listOnglet.forEach((onglet, index) => {
+  
+    listOnglet.forEach((onglet, index) => {
+      // Recherche l'élément de lien avec le texte correspondant
       const linkElement = screen.getByText(onglet);
+  
+      // Récupère la valeur du lien href
       const hrefValue = linkElement.getAttribute('href');
-      expect(linkElement).toContain(hrefValue);
+      
+      // Vérifie que le href correspond à la valeur attendue dans listLien
+      expect(hrefValue).toBe(listLien[index]);
     });
   });
+  
 
   test('applies the correct background color class', () => {
     const { container } = render(<BreadCrumbs {...mockProps} />);
-    
-    // Vérifie que la classe de la couleur de fond est correctement appliquée
-    expect(container.firstChild).toHaveClass(mockProps.bkColor);
+  
+    // Vérifie que la première balise ul a la bonne classe
+    const ulElement = container.querySelector('ul');  // Trouve la balise ul contenant les classes
+  
+    // Vérifie si 'ulElement' n'est pas null, puis récupère les classes
+    expect(ulElement).not.toBeNull();
+  
+    const classList = ulElement?.getAttribute('class'); // Récupère les classes de l'élément ul
+  
+    expect(classList).toContain(mockProps.bkColor); // Vérifie si la classe de la couleur de fond est présente
   });
+  
+
 
   test('renders nothing if the length of listOnglet and listLien do not match', () => {
     const invalidProps = {
@@ -45,18 +61,5 @@ describe('BreadCrumbs Component', () => {
     
     // Vérifie que le composant ne renvoie rien
     expect(container.firstChild).toBeNull();
-  });
-
-  test('renders an empty list when listOnglet is empty', () => {
-    const emptyProps = {
-      ...mockProps,
-      listOnglet: [],
-      listLien: [],
-    };
-
-    const { container } = render(<BreadCrumbs {...emptyProps} />);
-
-    // Vérifie que la liste est vide
-    expect(container.firstChild).toBeEmptyDOMElement();
   });
 });

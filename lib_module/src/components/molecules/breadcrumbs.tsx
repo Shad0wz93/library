@@ -1,3 +1,4 @@
+import React from 'react'
 import '../../assets/css/styleBreadCrumbs.css'
 
 /**
@@ -23,10 +24,13 @@ interface PropsBreadCrumbs{
  * @returns Composant JSX BreandCrumbs
  */
 const BreadCrumbs: React.FC<PropsBreadCrumbs> = ({listOnglet, listLien, bkColor}) =>{
+    if (listOnglet.length !== listLien.length) {
+        return null;
+    }
     let htmlElement = []
     for (let i=0;i<listOnglet.length;i++){
         htmlElement.push(
-            <li >
+            <li key={i}>
                 <a href={listLien[i]}>{listOnglet[i]}</a>
             </li>
         )
