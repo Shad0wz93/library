@@ -1,5 +1,6 @@
 import { useState } from "react"
 import '../../../assets/css/styleModal.css'
+import React from "react"
 
 /**
  * Interface représant le Modal

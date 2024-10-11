@@ -1,5 +1,6 @@
+import React from 'react'
 import './App.css'
-import Modal from './components/organismes/modal/Modal.tsx'
+import Modal from './components/organismes/modal/Modal'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 
