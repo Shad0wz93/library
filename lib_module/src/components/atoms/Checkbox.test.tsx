@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import CheckBox from './Checkbox';
+import React from 'react';
 
 describe('CheckBox Component', () => {
   const mockProps = {
