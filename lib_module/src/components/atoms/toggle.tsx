@@ -34,7 +34,7 @@ const Toggle: React.FC<PropsToggle> = ({form,color}) => {
         <div>
             <label className="switch">
                 <input className={`input ${color}`} type="checkbox"/>
-                <span className={`slider ${color} ${form}`}></span>
+                <span data-testid="slider" className={`slider ${color} ${form}`}></span>
             </label>
         </div>
     )
